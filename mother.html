@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to My Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        h1 {
+            color: #2c3e50;
+        }
+
+        .profile-pic {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 14px;
+            margin-top: 40px;
+            color: #777;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1 id="userName">Welcome!</h1>
+    <img src="https://via.placeholder.com/150" alt="Profile Picture" class="profile-pic" id="userImage">
+    <p id="userBio">Loading bio...</p>
+    <button onclick="sayHello()">Say Hello</button>
+
+    <footer>
+        &copy; <span id="year"></span> <span id="footerName">Your Name</span>. All rights reserved.
+    </footer>
+</div>
+
+<script>
+    // Ask the user for their info
+    const name = prompt("Enter your name:", "Manamino Meshesha");
+    const bio = prompt("Write a short bio about yourself:");
+    const imageUrl = prompt("Paste a link to your profile picture (or leave blank to use default):");
+
+    // Insert the user’s data into the page
+    if (name) {
+        document.getElementById("userName").textContent = name;
+        document.getElementById("footerName").textContent = name;
+    }
+
+    if (bio) {
+        document.getElementById("userBio").textContent = bio;
+    }
+
+    if (imageUrl) {
+        document.getElementById("userImage").src = imageUrl;
+    }
+
+    // Greeting function
+    function sayHello() {
+        alert("Hello! Welcome to " + name + "'s website.");
+    }
+
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

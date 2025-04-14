@@ -1,2 +1,2 @@
-# manamio.github.io
+Project of C#
 new repository
